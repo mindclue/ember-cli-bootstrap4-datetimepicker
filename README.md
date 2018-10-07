@@ -1,4 +1,4 @@
-# ember-cli-bootstrap-datetimepicker
+# ember-cli-bootstrap4-datetimepicker
 
 Date and time picker addon based on bootstrap.
 It uses [bootstrap-datetimepicker](https://github.com/Eonasdan/bootstrap-datetimepicker) and [moment.js](https://github.com/jasonmit/ember-cli-moment-shim).
@@ -13,7 +13,7 @@ It uses [bootstrap-datetimepicker](https://github.com/Eonasdan/bootstrap-datetim
 ## Installation
 
 ```bash
-ember install ember-cli-bootstrap-datetimepicker
+ember install ember-cli-bootstrap4-datetimepicker
 ```
 
 
@@ -159,7 +159,7 @@ See [momentjs'](http://momentjs.com/docs/#/displaying/format/) docs for valid fo
 Defaults: `component defaults`
 
 ```js
-'ember-cli-bootstrap-datetimepicker': {
+'ember-cli-bootstrap4-datetimepicker': {
   icons: {
     next: 'chevron right',
     previous: 'chevron left'
@@ -411,4 +411,4 @@ Show calendar or time icon after input.
 
 ## License
 
-[MIT License](https://github.com/btecu/ember-cli-bootstrap-datetimepicker/blob/master/LICENSE.md)
+[MIT License](https://github.com/btecu/ember-cli-bootstrap4-datetimepicker/blob/master/LICENSE.md)
