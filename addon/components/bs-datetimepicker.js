@@ -78,44 +78,46 @@ export default Component.extend(DynamicAttributeBindings, {
       }
     });
 
-    this.addObserver('date', function() {
-      this.$().data('DateTimePicker').date(this.getWithDefault('date', null));
-    });
+    this.addObserver('date', this, this.setDate);
+    this.addObserver('maxDate', this, this.setMaxDate);
+    this.addObserver('minDate', this, this.setMinDate);
+    this.addObserver('locale', this, this.setLocale);
+    this.addObserver('format', this, this.setFormat);
+    this.addObserver('viewMode', this, this.setViewMode);
+    this.addObserver('timeZone', this, this.setTimeZone);
+  },
 
-    this.addObserver('maxDate', function() {
-      this.$().data('DateTimePicker').maxDate(this.get('maxDate'));
-    });
-
-    this.addObserver('minDate', function() {
-      this.$().data('DateTimePicker').minDate(this.get('minDate'));
-    });
-
-    this.addObserver('locale', function() {
-      this.$().data('DateTimePicker').locale(this.get('locale'));
-    });
-
-    this.addObserver('format', function() {
-      this.$().data('DateTimePicker').format(this.get('format'));
-    });
-
-    this.addObserver('viewMode', function() {
-      this.$().data('DateTimePicker').viewMode(this.get('viewMode'));
-    });
-
-    this.addObserver('timeZone', function() {
-      this.$().data('DateTimePicker').timeZone(this.get('timeZone'));
-    });
+  setDate() {
+    this.$().data('DateTimePicker').date(this.getWithDefault('date', null));
+  },
+  setMaxDate() {
+    this.$().data('DateTimePicker').maxDate(this.get('maxDate'));
+  },
+  setMinDate() {
+    this.$().data('DateTimePicker').minDate(this.get('minDate'));
+  },
+  setLocale() {
+    this.$().data('DateTimePicker').locale(this.get('locale'));
+  },
+  setFormat() {
+    this.$().data('DateTimePicker').format(this.get('format'));
+  },
+  setViewMode() {
+    this.$().data('DateTimePicker').viewMode(this.get('viewMode'));
+  },
+  setTimeZone() {
+    this.$().data('DateTimePicker').timeZone(this.get('timeZone'));
   },
 
   willDestroyElement() {
     this._super(...arguments);
-    this.removeObserver('date');
-    this.removeObserver('maxDate');
-    this.removeObserver('minDate');
-    this.removeObserver('locale');
-    this.removeObserver('format');
-    this.removeObserver('viewMode');
-    this.removeObserver('timeZone');
+    this.removeObserver('date', this, this.setDate);
+    this.removeObserver('maxDate', this, this.setMaxDate);
+    this.removeObserver('minDate', this, this.setMinDate);
+    this.removeObserver('locale', this, this.setLocale);
+    this.removeObserver('format', this, this.setFormat);
+    this.removeObserver('viewMode', this, this.setViewMode);
+    this.removeObserver('timeZone', this, this.setTimeZone);
 
     // Running the `ember` application embedded might cause the DOM to be cleaned before
     let dateTimePicker = this.$().data('DateTimePicker');
