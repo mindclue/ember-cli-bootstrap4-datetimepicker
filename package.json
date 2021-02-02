@@ -33,7 +33,7 @@
   "dependencies": {
     "ember-cli-babel": "^6.6.0",
     "ember-cli-htmlbars": "^3.0.0",
-    "pc-bootstrap4-datetimepicker": "^4.17.50"
+    "pc-bootstrap4-datetimepicker": "^4.17.51"
   },
   "devDependencies": {
     "@ember/jquery": "^1.1.0",
