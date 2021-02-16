@@ -76,6 +76,14 @@ export default Component.extend(DynamicAttributeBindings, {
       if (this.change) {
         this.change(newDate);
       }
+    }).on('dp.hide', e => {
+      // Convert moment to js date or default to null
+      let newDate = e.date && e.date.toDate() || null;
+
+      this.set('date', newDate);
+      if (this.hide) {
+        this.hide(newDate);
+      }
     });
 
     this.addObserver('date', this, this.setDate);
